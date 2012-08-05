@@ -1,0 +1,17 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+
+<p>code: {{ LANGUAGE_CODE }}</p>
+<p>title: {{ title }}</p>
+
+<p>{{ welcome }}</p>
+<p>{{ name }}</p>
+<p>---- {{ plural }} ----</p>
+
+
+{% trans "This is a template translation" %}
+{% trans "Text goes here" as text %}
+<p>{{ text }}</p>
+
+{% blocktrans with the_name=a_name|upper %}{{ count }} is a very cool number and {{ the_name }} is a cool name{% endblocktrans %}
